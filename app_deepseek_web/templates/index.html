@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta al Modelo</title>
+    <!-- Llamar al archivo CSS externo -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Pregunta al Modelo</h1>
+    <form method="POST">
+        <label for="pregunta">Ingresa tu pregunta:</label>
+        <!--<input type="text" id="pregunta" name="pregunta" required>-->
+		<textarea id="pregunta" name="pregunta" rows="4" required></textarea>
+        <input type="submit" value="Preguntar">
+    </form>
+
+    <div class="loader" id="loader"></div>
+
+    <h2>Respuesta:</h2>
+    <pre id="respuesta"></pre>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            const loader = document.getElementById('loader');
+            const respuestaElement = document.getElementById('respuesta');
+
+            // Mostrar el indicador de carga
+            loader.style.display = 'block';
+            respuestaElement.textContent = ''; // Limpiar la respuesta anterior
+
+            fetch('/', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                const reader = response.body.getReader();
+                const decoder = new TextDecoder();
+
+                function read() {
+                    reader.read().then(({ done, value }) => {
+                        if (done) {
+                            loader.style.display = 'none'; // Ocultar el indicador de carga
+                            return;
+                        }
+                        const chunk = decoder.decode(value, { stream: true });
+                        respuestaElement.textContent += chunk;
+                        // Mantener la posición de la página
+                        window.scrollTo(0, document.body.scrollHeight);
+                        read();
+                    });
+                }
+
+                read();
+            });
+        });
+    </script>
+</body>
+</html>
