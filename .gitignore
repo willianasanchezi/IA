@@ -1,2 +1,3 @@
 test/
 app_deepseek_web/venv/
+app_deepseek_web/preguntas_respuestas.db
