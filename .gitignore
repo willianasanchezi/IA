@@ -4,3 +4,4 @@ app_deepseek_web/preguntas_respuestas.db
 AutoML/pycaret/classification/Classification.docx
 AutoML/pycaret/classification/logs.log
 AutoML/pycaret/venv/
+AutoML/pycaret/classification/.ipynb_checkpoints/
