@@ -1,3 +1,5 @@
 test/
 app_deepseek_web/venv/
 app_deepseek_web/preguntas_respuestas.db
+Libraries_Tool/venv
+Libraries_Tool/venv/.ipynb_checkpoints
