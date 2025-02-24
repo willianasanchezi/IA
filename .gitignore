@@ -1,5 +1,14 @@
 test/
 app_deepseek_web/venv/
 app_deepseek_web/preguntas_respuestas.db
+<<<<<<< HEAD
 Libraries_Tool/venv
 Libraries_Tool/venv/.ipynb_checkpoints
+=======
+AutoML/pycaret/classification/Classification.docx
+AutoML/pycaret/classification/logs.log
+AutoML/pycaret/venv/
+AutoML/pycaret/classification/.ipynb_checkpoints/
+ML/Proyecto_MLOps/nb/1_DEV/.ipynb_checkpoints
+ML/Proyecto_MLOps/venv
+>>>>>>> 621b9f0cb38e6dd2fbd9534d59bcdfabe61ef509

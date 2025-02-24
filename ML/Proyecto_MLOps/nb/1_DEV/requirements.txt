@@ -1,0 +1,8 @@
+pandas
+pyarrow
+plotly
+scikit-learn
+prophet
+openpyxl
+ipywidgets
+jupyterlab
