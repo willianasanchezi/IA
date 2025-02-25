@@ -1,0 +1,5 @@
+jupyterlab
+mlflow
+scikit-learn
+numpy
+pandas

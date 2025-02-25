@@ -7,3 +7,5 @@ AutoML/pycaret/venv/
 AutoML/pycaret/classification/.ipynb_checkpoints/
 ML/Proyecto_MLOps/nb/1_DEV/.ipynb_checkpoints
 ML/Proyecto_MLOps/venv
+mlflow/mlruns
+mlflow/venv
