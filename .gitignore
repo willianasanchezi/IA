@@ -2,6 +2,9 @@ test/
 LLMs_local/app_deepseek_web/venv/
 LLMs_local/app_deepseek_web/preguntas_respuestas.db
 LLMs_local/app_deepseek_web/__pycache__
+LLMs_local/ollamaAPIGateway/
+LLMs_local/ollamaMilvus/
+LLMs_local/app_embedtext_web
 Libraries_Tool/venv
 Libraries_Tool/venv/.ipynb_checkpoints
 AutoML/pycaret/classification/Classification.docx
@@ -14,3 +17,8 @@ Libraries_Tool/.ipynb_checkpoints
 mlflow/mlruns
 mlflow/venv
 mlflow/.ipynb_checkpoints
+ML/deepface/.ipynb_checkpoints
+ML/deepface/real-time.py
+ML/deepface/script_deepface.py
+ML/deepface/venv/
+ML/deepface/app/
