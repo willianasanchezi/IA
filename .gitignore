@@ -10,3 +10,7 @@ AutoML/pycaret/classification/.ipynb_checkpoints/
 ML/Proyecto_MLOps/nb/1_DEV/.ipynb_checkpoints
 ML/Proyecto_MLOps/venv
 Libraries_Tool/.ipynb_checkpoints/
+mlflow/mlruns
+mlflow/venv
+mlflow/.ipynb_checkpoints
+app_deepseek_web/__pycache__/
