@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar y Analizar Imagen</title>
+</head>
+<body>
+    <h1>Cargar y Analizar Imagen</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*">
+        <button type="submit">Cargar y Analizar</button>
+    </form>
+
+    {% if error %}
+    <h2 style="color: red;">Error: {{ error }}</h2>
+    {% endif %}
+
+    {% if results %}
+    <h2>Resultados del Análisis:</h2>
+    {% for result in results %}
+    <div>
+        <p><strong>Rostro {{ loop.index }}:</strong></p>
+        <p>Edad: {{ result['age'] }}</p>
+        <p>Género: {{ result['dominant_gender'] }}</p>
+        <p>Emoción: {{ result['dominant_emotion'] }}</p>
+        <p>Raza: {{ result['dominant_race'] }}</p>
+    </div>
+    <hr>
+    {% endfor %}
+
+    <h2>Imagen Original:</h2>
+    <img src="{{ url_for('static', filename='uploads/' + image_url.split('/')[-1]) }}" alt="Imagen Original" width="300">
+
+    <h2>Imagen Analizada:</h2>
+    <img src="{{ url_for('static', filename='uploads/' + output_image) }}" alt="Imagen Analizada" width="300">
+    {% endif %}
+</body>
+</html>

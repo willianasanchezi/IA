@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analizador de Imágenes con DeepFace</title>
+</head>
+<body>
+    <h1>Analizador de Imágenes con DeepFace</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <label for="file">Cargar una imagen:</label>
+        <input type="file" name="file" id="file" accept="image/*" required>
+        <button type="submit">Analizar</button>
+    </form>
+
+    {% if result %}
+        <h2>Resultados:</h2>
+        <pre>{{ result }}</pre>
+    {% endif %}
+
+    {% if error %}
+        <h2>Error:</h2>
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>

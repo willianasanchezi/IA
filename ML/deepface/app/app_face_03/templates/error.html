@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error</title>
+</head>
+<body>
+    <h1>An error occurred during analysis:</h1>
+    <p>{{ error_message }}</p>
+    <img src="{{ url_for('display_image', filename=filename) }}" alt="Uploaded Image" width="300">  </br>
+    <a href="/">Back to upload</a>
+</body>
+</html>

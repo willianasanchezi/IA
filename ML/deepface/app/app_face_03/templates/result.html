@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+</head>
+<body>
+    <h1>Analysis Result</h1>
+    <img src="{{ url_for('display_image', filename=filename) }}" alt="Uploaded Image" width="300">  </br>
+    <p>Dominant Emotion: {{ dominant_emotion }}</p>
+    <p>Age: {{ age }}</p>
+    <p>Gender: {{ gender }}</p>
+    <p>Race: {{ race }}</p>
+
+     <a href="/">Back to upload</a>
+</body>
+</html>

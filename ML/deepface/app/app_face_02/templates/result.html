@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Análisis</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding-top: 20px;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 30px 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .card p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .back-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resultados del Análisis</h1>
+        {% if results %}
+        <h2>Detalles:</h2>
+        {% for result in results %}
+        <div class="card">
+            <p><strong>Rostro {{ loop.index }}:</strong></p>
+            <p>Edad: {{ result['age'] }}</p>
+            <p>Sexo: {{ result['dominant_gender'] }}</p>
+            <p>Emoción: {{ result['dominant_emotion'] }}</p>
+            <!-- <p>Raza: {{ result['dominant_race'] }}</p> -->
+        </div>
+        {% endfor %}
+        <h2>Imagen Original:</h2>
+        <img src="{{ url_for('static', filename='uploads/' + image_url) }}" alt="Imagen Original">
+        <h2>Imagen Analizada:</h2>
+        <img src="{{ url_for('static', filename='uploads/' + output_image) }}" alt="Imagen Analizada">
+        {% endif %}
+        <br>
+        <a href="{{ url_for('index') }}">
+            <button class="back-button">Regresar a Inicio</button>
+        </a>
+    </div>
+</body>
+</html>

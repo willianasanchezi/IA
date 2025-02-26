@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Análisis</title>
+</head>
+<body>
+    <h1>Resultados del Análisis</h1>
+
+    {% if results %}
+    <h2>Detalles:</h2>
+    {% for result in results %}
+    <div>
+        <p><strong>Rostro {{ loop.index }}:</strong></p>
+        <p>Edad: {{ result['age'] }}</p>
+        <p>Género: {{ result['dominant_gender'] }}</p>
+        <p>Emoción: {{ result['dominant_emotion'] }}</p>
+        <p>Raza: {{ result['dominant_race'] }}</p>
+    </div>
+    <hr>
+    {% endfor %}
+
+    <h2>Imagen Original:</h2>
+    <img src="{{ url_for('static', filename='uploads/' + image_url) }}" alt="Imagen Original" width="300">
+
+    <h2>Imagen Analizada:</h2>
+    <img src="{{ url_for('static', filename='uploads/' + output_image) }}" alt="Imagen Analizada" width="300">
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('index') }}">
+        <button>Regresar a Inicio</button>
+    </a>
+</body>
+</html>
