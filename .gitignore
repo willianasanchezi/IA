@@ -1,6 +1,7 @@
 test/
-app_deepseek_web/venv/
-app_deepseek_web/preguntas_respuestas.db
+LLMs_local/app_deepseek_web/venv/
+LLMs_local/app_deepseek_web/preguntas_respuestas.db
+LLMs_local/app_deepseek_web/__pychache__
 Libraries_Tool/venv
 Libraries_Tool/venv/.ipynb_checkpoints
 AutoML/pycaret/classification/Classification.docx
