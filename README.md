@@ -1,7 +1,7 @@
 # IA
 Inteligencia Artificial
 
-<img width="1455" height="1001" alt="Diagrama_IA drawio" src="https://github.com/user-attachments/assets/c92184b6-0742-4553-8b6a-14641e9e7258" />
+<img width="1455" height="1001" alt="Diagrama_IA drawio" src="https://github.com/user-attachments/assets/33b605a8-2e83-4d70-b75d-b2e490428b58" />
 
 
 ## URLs de fuentes académicas que respaldan el diagrama:
